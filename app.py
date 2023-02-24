@@ -130,10 +130,12 @@ def start(start):
 
     startdate = start.replace(" ", "").lower()
 
+    #get the list of date, minimum maximum and average of the temperature greater than equal to start date
     results = session.query(Measurement.date, func.min(Measurement.tobs),func.max(Measurement.tobs),func.avg(Measurement.tobs)).\
     filter(Measurement.date >= startdate).group_by(Measurement.date).\
     order_by(func.min(Measurement.tobs),func.max(Measurement.tobs),func.avg(Measurement.tobs)).all()
 
+    #return the result as a list of dicts
     results_json = []
     for date,mintemp,maxtemp,avgtemp in results:
         temp_results = {}
@@ -153,12 +155,14 @@ def startend(start,end):
     startdate = start.replace(" ", "")
     enddate = end.replace(" ","")
 
+    #get the list of date, minimum maximum and average of the temperature greater than equal to start date and less than equal to end date
     results = session.query(Measurement.date, func.min(Measurement.tobs),func.max(Measurement.tobs),func.avg(Measurement.tobs)).\
     filter(Measurement.date >= startdate).\
     filter(Measurement.date <= enddate).\
     group_by(Measurement.date).\
     order_by(func.min(Measurement.tobs),func.max(Measurement.tobs),func.avg(Measurement.tobs)).all()
 
+    #return the result as a list of dicts
     results_json = []
     for date,mintemp,maxtemp,avgtemp in results:
         temp_results = {}
@@ -170,7 +174,6 @@ def startend(start,end):
 
     return jsonify(results_json)
 
-
-
+#run the app using Flask
 if __name__ == '__main__':
     app.run()
