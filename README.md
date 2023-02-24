@@ -5,12 +5,12 @@
 
 ## Table of Contents
 
-- Part 1: Analyse and Explore the Climate Data(#Analyse and Explore the Climate Data)
--- Precipitation Analysis(#Precipitation Analysis)
--- Station Analysis(#Station Analysis)
-- Part 2: Design Your Climate App(#Design Your Climate App)
+- Part 1: Analyse and Explore the Climate Data
+-- Precipitation Analysis
+-- Station Analysis
+- Part 2: Design Your Climate App
 
-## Part 1: Analyse and Explore the Climate Data(#Analyse and Explore the Climate Data)
+## Part 1: Analyse and Explore the Climate Data
 --------------------------------------------------------------------------------------------
 Used SQLAlchemy ORM queries, Pandas, and Matplotlib to completed analysis. To analyse and explore the climate data,did the following steps:
 1. Updated climate_starter.ipynb to finish the work and used hawaii.sqlite to complete climate analysis and data exploration.
@@ -37,7 +37,7 @@ Used SQLAlchemy ORM queries, Pandas, and Matplotlib to completed analysis. To an
 1. Using the most active station id, Queried the last 12 months of temperature observation data for most active station id and plotted the results as a histogram
 
 ----
-## Part 2: Design Your Climate Appa(#Design Your Climate App)
+## Part 2: Design Your Climate App
 --------------------------------------------------------------------------------------------
 Designed the API routes using Flask:
 To do so, use Flask to create your routes as follows:
