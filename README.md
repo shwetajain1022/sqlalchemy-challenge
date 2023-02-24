@@ -6,8 +6,8 @@
 ## Table of Contents
 
 - Part 1: Analyse and Explore the Climate Data
--- Precipitation Analysis
--- Station Analysis
+1. Precipitation Analysis
+1. Station Analysis
 - Part 2: Design Your Climate App
 
 ## Part 1: Analyse and Explore the Climate Data
