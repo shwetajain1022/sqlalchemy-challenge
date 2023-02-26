@@ -50,6 +50,7 @@ def welcome():
         f"/api/v1.0/<start>/<end></br>"
     )
 
+# Returns jsonified precipitation data for the last year with the date as the key and the value as the precipitation 
 @app.route("/api/v1.0/precipitation")
 def precipitation():
     # Create our session (link) from Python to the DB
@@ -72,7 +73,7 @@ def precipitation():
         all_prcp_list.append(prcp_dict)
     return jsonify(all_prcp_list)
 
-
+# Returns jsonified data of all of the stations in the database
 @app.route("/api/v1.0/stations")
 def stations():
     # Create our session (link) from Python to the DB
@@ -89,6 +90,7 @@ def stations():
 
     return jsonify(all_station_list)
 
+# Returns jsonified data for the most active station for the last year
 @app.route("/api/v1.0/tobs")
 def tobs():
     # Create our session (link) from Python to the DB
@@ -121,8 +123,7 @@ def tobs():
         all_tobs_list.append(tobs_dict)
     return jsonify(all_tobs_list)
 
-
-
+# Returns the min, max, and average temperatures calculated from the given start date to the end of the dataset
 @app.route("/api/v1.0/<start>")
 def start(start):
     # Create our session (link) from Python to the DB
@@ -147,6 +148,7 @@ def start(start):
 
     return jsonify(results_json)
 
+# Returns the min, max, and average temperatures calculated from the given start date to the given end date
 @app.route("/api/v1.0/<start>/<end>")
 def startend(start,end):
     # Create our session (link) from Python to the DB
